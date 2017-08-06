@@ -1,0 +1,14 @@
+services:
+
+    starwars_service:
+        class: AppBundle\Service\StarwarsService
+        arguments:
+            - "@starwars_repo"
+
+    starwars_repo:
+        class: AppBundle\Repository\CharacterRepository
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    starwars_porter:
+            class: AppBundle\Service\StarwarsPorter

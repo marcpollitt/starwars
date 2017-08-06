@@ -1,0 +1,25 @@
+AppBundle\Entity\Character:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CharacterRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '255'
+        amount:
+            type: integer
+        hit:
+            type: integer
+        lives:
+            type: integer
+            nullable: true
+        numberOfHits:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

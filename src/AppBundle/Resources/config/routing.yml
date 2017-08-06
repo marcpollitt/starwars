@@ -1,0 +1,9 @@
+starwars:
+    path: /starwars/fire
+    methods: GET
+    defaults: { _controller: 'AppBundle:Default:fire' }
+
+starwars_setup:
+    path: /starwars/setup
+    methods: POST
+    defaults: { _controller: 'AppBundle:Default:setup' }

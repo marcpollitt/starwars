@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Starwars</title>
+</head>
+<body>
+
+<button id="fire_btn">Fire</button>
+
+<textarea id="wounds" style="height:60px; width: 160px;">
+
+</textarea>
+
+<script>
+    $( document ).ready(function() {
+        $('#fire_btn').click(function(){
+            $.getJSON('http://localhost:8000/starwars/fire').done(function(data) {
+                var battle = '';
+
+                for(var i = 0 ; i < data.length; i++ ) {
+                    battle += data[i].name + ': ' + data[i].numberOfHits + '       ';
+                }
+                $('#wounds').val(battle);
+
+            });
+        });
+
+
+    });
+
+
+
+
+</script>
+</body>
+</html>
